@@ -1,5 +1,7 @@
 import Menu from './Components/Menu'
 import Rotas from './rotas';
+import Footer from './Components/Footer'
+//import './App.scss';
 
 import './App.css'
 
@@ -19,6 +21,9 @@ function App() {
           <Rotas />
         </Container>
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
 
 

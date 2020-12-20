@@ -1,3 +1,52 @@
-body {
-    padding: 80px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: "Montserrat";
+  background-color: #2D1B0B;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.dFlex, .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border: solid 1px rgba(255, 255, 255, 0.2);
+  width: 30%;
+  border-radius: 15px;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 80px;
+  margin-top: 30px;
+  min-width: 300px;
+}
+.card .card_img {
+  margin-top: -5vw;
+}
+.card .card_img img {
+  width: 300px;
+}
+
+
+.form {
+  margin: 100px;
+}
+
+.footer {
+  padding: auto;
+}
+
+/*# sourceMappingURL=App.css.map */

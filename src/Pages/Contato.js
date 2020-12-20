@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { Form, Button, Row} from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 export default function Contato() {
     const [ form, setForm ] = useState({
@@ -29,17 +29,46 @@ export default function Contato() {
             body:json
         }
 
-        const resposta = await fetch("http://localhost/recode_pro/php/cadastro_mensagem.php", opcoes);
+        const resposta = await fetch("http://localhost/projeto_infra/backend/send_message.php", opcoes);
         const dados = await resposta.json()
         console.log(dados)
     
     }
 
+    function sendMessage(event) {
+        event.preventDefault();
+        // console.log(event.target)
+
+        let formData = new FormData(event.target);
+
+        const url = "http://localhost/projeto_infra/backend/send_message.php";
+
+        fetch(url, {
+            method: "POST",
+            body: formData
+        })
+
+
+    }
+
     return (
-        <Row margin-top="200px">
-            <div className="col-lg-6 col-md-6 mx-auto" > 
-                <Form /*onSubmit={controleEnvio}*/>
-                    <h4>Fale Conosco</h4>
+       <div className="container py-5">
+        <div className="card w-75 mx-auto border-0">
+            <form onSubmit={sendMessage}>
+                <input className="form-control mt-2" type="text" name="name" placeholder="Nome" />
+                <input className="form-control mt-2" type="text" name="message" placeholder="Message" />
+                <input className="form-control mt-2" type="text-area" rows="4" name="email" placeholder="E-mail" />
+                <button className="btn btn-info w-100 mt-2">Enviar</button>
+            </form>
+
+        </div>
+        </div>
+
+
+        /*<Row>
+            <div className="form col-lg-6 col-md-6 mx-auto"> 
+                <Form action="http://localhost/projeto_infra/backend/send_message.php"  /*onSubmit={controleEnvio}>
+                    <h4 style={{ margin: '20' }}>Fale Conosco</h4>
                     <Form.Group>
                         <Form.Label>Nome:</Form.Label>
                         <Form.Control onChange={controleMudanca} type="text" id="nome" />
@@ -57,6 +86,6 @@ export default function Contato() {
                     </Button>
                 </Form>
             </div>
-        </Row>
+        </Row>*/
     )
 }

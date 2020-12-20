@@ -17,20 +17,8 @@ export default function Produto(props) {
     }
 
     return (
-        /*<figure className={props.categoria + " produto col-lg-3 col-md-4 col-sm-6 col-xs-12 mr-auto"} onMouseOver={show_info} onMouseOut={hide_info}>
-            <img src={require(`./img/${props.imagem}`).default} alt="imagem de Produtos" />
-            <figcaption>
 
-                <p className="nome-prod">
-                    {props.nome}
-                </p>
-                <p className="precofinal-prod">
-                    R$ {props.preco}
-                </p>
-            </figcaption>
-        </figure>*/
-
-        <Card style={{ width: '18rem' }}>
+        <Card className="dFlex" style={{ width: '18rem', margin: '30px' }}>
         <Card.Img variant="top" src={require(`./img/${props.imagem}`).default} />
         <Card.Body>
         <Card.Title><p className="nome-prod">
@@ -38,7 +26,7 @@ export default function Produto(props) {
                 </p></Card.Title>
         <Card.Text>
                 <p>
-                    Cafés especiais da região de {props.regiao}
+                    Região: {props.regiao}
                 </p>
         </Card.Text>
         <Card.Text>

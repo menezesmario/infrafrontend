@@ -9,7 +9,7 @@ function BaseMenu(props) {
     return (
         <Navbar className="navbar-dark" bg="dark" expand="lg" fixed="top">
             <Navbar.Brand>
-                CoffeeShop Brasil
+            <Nav.Link style={{ margin: '10', color: 'white' }} as={Link} href="/loja" to="/loja">CoffeeShop</Nav.Link>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="item-menu" />
             <Navbar.Collapse id="item-menu">
